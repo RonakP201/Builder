@@ -1,8 +1,8 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Outfit Builder</title>
 <style>
-:root{--bg:#FAF9F6;--card:#F1EFE8;--text:#1F1E1D;--muted:#6B6A66;--line:#CFCDC6;--strong:#1F1E1D}
-@media (prefers-color-scheme:dark){:root{--bg:#1C1C1B;--card:#2A2A28;--text:#ECEBE7;--muted:#A3A19B;--line:#4A4945;--strong:#ECEBE7}}
+:root{--bg:#141413;--card:#262624;--text:#ECEBE7;--muted:#A3A19B;--line:#4A4945;--strong:#ECEBE7;color-scheme:dark}
+html{background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Arial,sans-serif}
 .wrap{max-width:760px;margin:0 auto;padding:24px 16px}
 h1{font-size:22px;font-weight:500;margin:0 0 16px}
@@ -12,10 +12,10 @@ h1{font-size:22px;font-weight:500;margin:0 0 16px}
 .row{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
 button{font:inherit;background:transparent;color:var(--text);border:0.5px solid var(--line);border-radius:8px;cursor:pointer}
 .ch{display:flex;align-items:center;gap:6px;font-size:13px;padding:5px 10px}
-.ch.on{border:1.5px solid var(--strong)}
+.ch.on{border:1.5px solid var(--strong);background:#33332F}
 .sw{width:14px;height:14px;border-radius:50%;border:0.5px solid #888;display:inline-block}
 .lb{font-size:13px;color:var(--muted);margin:0}
-.pk{font-size:12px;padding:4px 10px}.pk.on{border:1.5px solid var(--strong)}.pk.buy{border-style:dashed}.gl{font-size:12px;color:var(--muted);min-width:118px}.bg{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0}
+.pk{font-size:12px;padding:4px 10px}.pk.on{border:1.5px solid var(--strong);background:#33332F}.pk.buy{border-style:dashed}.gl{font-size:12px;color:var(--muted);min-width:118px}.bg{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0}
 #vd{font-size:12px;padding:3px 10px;border-radius:8px}
 </style></head><body><div class="wrap">
 <h1>Outfit builder</h1>
@@ -114,7 +114,7 @@ const BEST=[
 const OWN=new Set(["White Tipped Textured Polo","Green Stripe Knit Polo","Cream XFJ","Navy 166","Pine Green 132","Bordeaux Red","Dark Green LS Polo","White/Light Blue Stripe LS Polo","Cream LS Polo","Chocolate","Anthracite Gray","Beige Marl Jogger","Black","Onitsuka White/Navy","AF1 White","Black Chelsea","Zara Black Sneaker"]);
 const VC={Best:["#EAF3DE","#27500A"],Good:["#E6F1FB","#0C447C"],OK:["#FAEEDA","#633806"],Avoid:["#FCEBEB","#791F1F"]};
 let s={p:12,t:0,h:3};
-function sh(c){const d=parseInt(c.slice(1),16);return "#"+[(d>>16)&255,(d>>8)&255,d&255].map(x=>Math.round(x*0.72).toString(16).padStart(2,"0")).join("")}
+function sh(c){const d=parseInt(c.slice(1),16),v=[(d>>16)&255,(d>>8)&255,d&255],dark=(v[0]*.3+v[1]*.59+v[2]*.11)<70;return "#"+v.map(x=>Math.round(dark?x+(255-x)*0.28:x*0.72).toString(16).padStart(2,"0")).join("")}
 function set(id,f,st){const e=document.getElementById(id);if(f)e.setAttribute("fill",f);e.setAttribute("stroke",st)}
 function vis(ids,on){ids.forEach(i=>document.getElementById(i).style.display=on?"block":"none")}
 function draw(){
