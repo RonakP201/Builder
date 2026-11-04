@@ -1,0 +1,145 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Outfit Builder</title>
+<style>
+:root{--bg:#FAF9F6;--card:#F1EFE8;--text:#1F1E1D;--muted:#6B6A66;--line:#CFCDC6;--strong:#1F1E1D}
+@media (prefers-color-scheme:dark){:root{--bg:#1C1C1B;--card:#2A2A28;--text:#ECEBE7;--muted:#A3A19B;--line:#4A4945;--strong:#ECEBE7}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Arial,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px}
+h1{font-size:22px;font-weight:500;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:20px}
+@media (max-width:600px){.grid{grid-template-columns:1fr;gap:12px}.fig{position:sticky;top:0;z-index:5;padding:6px;box-shadow:0 4px 10px rgba(0,0,0,.08)}.fig svg{width:110px;height:auto}.gl{min-width:100%!important}.wrap{padding:16px 12px}button{min-height:34px}}
+.fig{background:var(--card);border-radius:12px;padding:12px;display:flex;justify-content:center;align-self:start}
+.row{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
+button{font:inherit;background:transparent;color:var(--text);border:0.5px solid var(--line);border-radius:8px;cursor:pointer}
+.ch{display:flex;align-items:center;gap:6px;font-size:13px;padding:5px 10px}
+.ch.on{border:1.5px solid var(--strong)}
+.sw{width:14px;height:14px;border-radius:50%;border:0.5px solid #888;display:inline-block}
+.lb{font-size:13px;color:var(--muted);margin:0}
+.pk{font-size:12px;padding:4px 10px}.pk.on{border:1.5px solid var(--strong)}.pk.buy{border-style:dashed}.gl{font-size:12px;color:var(--muted);min-width:118px}.bg{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0}
+#vd{font-size:12px;padding:3px 10px;border-radius:8px}
+</style></head><body><div class="wrap">
+<h1>Outfit builder</h1>
+<div class="grid">
+<div class="fig"><svg viewBox="0 0 200 430" width="200" role="img" aria-label="Outfit preview">
+<defs><pattern id="stp" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#F6F5F1"/><rect width="12" height="6" fill="#9DBCDD"/></pattern><pattern id="stp2" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#EFE8CF"/><rect width="8" height="4" fill="#4E8A4F"/></pattern></defs>
+<path id="ls" d="M60 30 L85 20 Q100 30 115 20 L140 30 L168 64 L188 160 L170 166 L148 96 L145 172 L55 172 L52 96 L30 166 L12 160 L32 64 Z" stroke-width="1.2"/>
+<path id="lcL" d="M13 154 L31 160" stroke-width="5" fill="none"/><path id="lcR" d="M187 154 L169 160" stroke-width="5" fill="none"/>
+<path id="polo" d="M60 30 L85 20 Q100 30 115 20 L140 30 L178 58 L162 92 L145 82 L145 172 L55 172 L55 82 L38 92 L22 58 Z" stroke-width="1.2"/>
+<path id="neck" d="M85 20 Q100 36 115 20" stroke-width="3" fill="none"/>
+<path id="collar" d="M85 20 L100 42 L115 20 L108 16 Q100 22 92 16 Z" stroke-width="1"/>
+<path id="plk" d="M96 40 L104 40 L104 72 L96 72 Z" stroke-width="0.8"/>
+<circle id="b1" cx="100" cy="52" r="1.8"/><circle id="b2" cx="100" cy="63" r="1.8"/>
+<path id="cuffL" d="M24 62 L40 94" stroke-width="5"/><path id="cuffR" d="M176 62 L160 94" stroke-width="5"/>
+<path id="tr" d="M58 172 L142 172 L148 380 L108 380 L100 220 L92 380 L52 380 Z" stroke-width="1.2"/>
+<path id="crease" d="M75 185 L72 375 M125 185 L128 375" stroke-width="0.8" fill="none"/>
+<path id="wb" d="M58 172 L142 172 L142 182 L58 182 Z" stroke-width="0.8"/>
+<g id="draw"><path d="M95 176 L92 205 M105 176 L108 205" stroke-width="1.4" fill="none"/></g>
+<g id="jst" stroke="#C8893A" stroke-width="0.9" fill="none" stroke-dasharray="2 1.5">
+<path d="M61 186 Q76 188 82 206"/><path d="M139 186 Q124 188 118 206"/>
+<path d="M100 184 L100 212 Q100 220 108 216 L108 184"/>
+<path d="M58 182 L142 182"/>
+<path d="M54 374 L91 374 M109 374 L146 374"/>
+</g>
+<g id="loops" stroke-width="0.8"><path d="M68 171 L68 184 M100 171 L100 184 M132 171 L132 184" stroke-width="2.2" fill="none"/><circle cx="100" cy="177" r="2.2" fill="#B9B6AE" stroke="#8A877F"/></g>
+<path id="uL" d="M48 382 L92 382 L94 398 L34 400 Q30 392 48 382 Z" stroke-width="1"/><path id="sL" d="M32 398 L96 396 L96 406 L32 408 Z" stroke-width="0.8"/><path id="aL" d="M58 386 L80 386" stroke-width="3" fill="none"/>
+<path id="uR" d="M108 382 L152 382 Q170 392 166 400 L106 398 Z" stroke-width="1"/><path id="sR" d="M104 396 L168 398 L168 408 L104 406 Z" stroke-width="0.8"/><path id="aR" d="M120 386 L142 386" stroke-width="3" fill="none"/>
+</svg></div>
+<div>
+<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:4px"><span id="sc" style="font-size:28px;font-weight:500"></span><span class="lb">/ 5</span><span id="vd"></span></div>
+<p id="oc" class="lb" style="margin-bottom:14px"></p>
+<p class="lb">Polo (short sleeve)</p><div class="row" id="rp"></div>
+<p class="lb">Polo (long sleeve)</p><div class="row" id="rlp"></div>
+<p class="lb">Long sleeve T-shirt</p><div class="row" id="rl"></div>
+<p class="lb">Short sleeve T-shirt</p><div class="row" id="rss"></div>
+<p class="lb">Trouser</p><div class="row" id="rt"></div>
+<p class="lb">Jeans</p><div class="row" id="rj"></div>
+<p class="lb">Shoes</p><div class="row" id="rs"></div>
+<p class="lb" style="font-weight:500;color:var(--text);margin-top:4px">Best of the best</p><div id="rb"></div>
+<p class="lb">Top picks</p><div class="row" id="rk"></div>
+<p id="desc" class="lb" style="margin-top:12px"></p><p id="why" class="lb" style="margin-top:6px;color:var(--text)"></p>
+</div></div></div>
+<script>
+// Tops: [name, color, type]  type: polo | ls (long sleeve tee) | ss (short sleeve tee)
+const P=[["White 001","#F4F3EF","polo"],["Cream XFJ","#EDE3CC","polo"],["Navy 166","#1B2A44","polo"],["Pine Green 132","#1F5130","polo"],["Bordeaux Red","#701C28","polo"],
+["Cream LS Tee","#EDE3CC","ls"],["Brown LS Tee","#5E4434","ls"],["Black LS Tee","#1E1E1E","ls"],
+["White Tee","#F6F5F2","ss"],["Black Tee","#1E1E1E","ss"],
+["Dark Green LS Polo","#1E4A30","lpolo",0,"#F4F3EF"],["White/Light Blue Stripe LS Polo","#F4F3EF","lpolo","stp"],["Cream LS Polo","#EDE3CC","lpolo"],
+["White Tipped Textured Polo","#F3F2EC","polo",0,"#F3F2EC","#8A6A35"],["Green Stripe Knit Polo","#4E8A4F","polo","stp2","#EFE8CF","#EFE8CF","#EFE8CF"]];
+const T=[["Chocolate","#4E4537"],["Anthracite Gray","#3A3B3E"],["Beige Marl Jogger","#B4A898"],["Black","#1B1B1B"],["Dark Stonewash Jeans","#3E5C88"],["Hats Off Jeans","#8EA9C9"]];
+const S=[["Samba Beige","#DCCBAA","#B5834A","#DCCBAA"],["Onitsuka White/Navy","#F3F3F1","#E6E6E2","#1B2A44"],["AF1 White","#F7F7F5","#FFFFFF","#F7F7F5"],["Black Chelsea","#1A1A1A","#111111","#2E2E2E"],["Zara Black Sneaker","#1C1C1C","#F2F2F0","#1C1C1C"]];
+const OC=["Smart-casual / dinner","Office / meetings","Weekend / travel","Evening / night out","Smart-casual / weekend","Daytime casual / weekend"];
+// Scores per top: [Chocolate, Anthracite, Beige Jogger, Black, Dark Stonewash, Hats Off]
+const B={"White 001":[5,5,5,5,5,5],"Cream XFJ":[5,5,4,5,5,4.5],"Navy 166":[5,5,5,2,3.5,5],"Pine Green 132":[5,5,5,4,4.5,4],"Bordeaux Red":[4,5,5,5,5,4.5],
+"Cream LS Tee":[5,4.5,4,5,5,4.5],"Brown LS Tee":[3.5,4,4.5,4.5,5,5],"Black LS Tee":[3.5,3.5,4.5,4,5,4.5],
+"Dark Green LS Polo":[5,5,4.5,4.5,4.5,4],"White/Light Blue Stripe LS Polo":[4.5,4.5,4,4.5,5,4],"Cream LS Polo":[5,5,4,5,5,4.5],"White Tipped Textured Polo":[5,5,4.5,5,5,5],"Green Stripe Knit Polo":[5,4,4.5,4.5,5,4.5],
+"White Tee":[4,3,5,5,5,5],"Black Tee":[3.5,3.5,4.5,4,5,4.5]};
+const ST={"Samba Beige":[0,0,-1,-0.5,0,0],"Onitsuka White/Navy":[0,0,0.5,0,0,0.5],"AF1 White":[-1,-0.5,0,0,0,0],"Black Chelsea":[0,0.5,-2,0.5,0,-0.5],"Zara Black Sneaker":[-0.5,-0.5,0,0.5,0,-0.5]};
+const TOP=[[1,0,0],[2,0,1],[3,0,0],[2,2,1],[3,2,2],[0,1,1],[1,3,2],[4,1,1],[4,3,2],[0,4,2],[4,4,0],[2,5,1],[1,5,0],[5,4,0],[6,4,3],[6,5,0],[7,4,2],[8,4,2],[9,4,2],[0,3,3],[4,0,3],[1,1,3],[8,4,4],[3,3,4],[10,0,3],[10,4,0],[11,0,0],[11,4,2],[12,0,3],[12,3,3],[13,0,0],[13,4,3],[14,0,0],[14,5,2]];
+const BEST=[
+["Smart / Dinner",[[12,0,3,"Cream + Chocolate","Warm cream at your face, chocolate below, black boots: tonal, rich, the most elegant look you own."],
+[10,0,1,"Green + Chocolate","Earthy green and brown; the white collar lifts your face, Onitsuka's navy keeps it light."],
+[4,1,3,"Bordeaux + Anthracite","Deep red pops on warm skin; grey and black boots keep it sharp."],
+[3,0,3,"Pine + Chocolate","Forest green and brown is the classic autumn pairing; Chelsea makes it dinner-ready."],
+[13,0,3,"White Tipped + Chocolate","Brown tipping echoes the chocolate trouser: polished and intentional."],
+[10,1,3,"Green LS + Anthracite","Deep green with charcoal and black boots: quiet, expensive look."],
+[1,0,0,"Cream + Chocolate + Samba","All warm tones top to bottom; Samba keeps it relaxed-smart."]]],
+["Office",[[13,1,3,"White Tipped + Anthracite","Texture and brown tipping look premium; grey trouser and Chelsea read professional."],
+[2,0,1,"Navy + Chocolate","Classic navy-brown pairing; Onitsuka repeats the navy."],
+[11,1,3,"Stripe LS + Anthracite","Crisp stripe for meetings; grey and black keep it serious."],
+[1,1,1,"Cream + Anthracite","Soft cream on charcoal: clean, calm, easy every day."],
+[3,1,1,"Pine + Anthracite","Green on grey is understated and smart; navy-accent shoe adds polish."],
+[12,1,1,"Cream LS + Anthracite","Long sleeve cream for cooler days; looks put together with minimal effort."],
+[4,1,1,"Bordeaux + Anthracite + Onitsuka","Confident colour that still reads professional."]]],
+["Evening / Night out",[[1,3,3,"Cream + Black","Highest contrast you can wear: cream top, all-black below. Strong with dark hair."],
+[14,3,4,"Green Stripe + Black","Bold stripe up top, clean black base; black sneaker keeps it relaxed."],
+[4,3,4,"Bordeaux + Black","Deep red on black: rich and dramatic, made for nights out."],
+[12,3,3,"Cream LS + Black","Long sleeve version of the cream-black contrast; sharp for cold evenings."],
+[13,3,3,"White Tipped + Black","Bright textured top on a black base; brown tipping adds detail."],
+[10,3,3,"Green LS + Black","White collar against deep green and black: striking but grown-up."],
+[11,3,3,"Stripe LS + Black","Clean stripe and all-black bottom: crisp evening smart-casual."]]],
+["Weekend",[[13,2,1,"White Tipped + Jogger","Light, clean, effortless; brown tipping ties to the beige jogger."],
+[4,2,2,"Bordeaux + Jogger","Rich colour on a soft neutral; white AF1 freshens it."],
+[3,2,2,"Pine + Jogger","Deep green and beige: warm, earthy, suits your undertone."],
+[2,2,1,"Navy + Jogger","Navy and beige is a sure-thing combo; Onitsuka matches the navy."],
+[14,2,1,"Green Stripe + Jogger","Playful stripe with soft beige: relaxed, summery weekend look."],
+[10,2,2,"Green LS + Jogger","Cool-weather weekend: deep green, soft beige, white sneakers."]]],
+["With jeans (to buy)",[[6,4,3,"Brown LS + Dark Denim","Warm brown and dark denim with Chelsea boots: the strongest fall look on the list."],
+[2,5,1,"Navy + Light Denim","Navy on light wash gives clean contrast; Onitsuka matches the navy."],
+[13,4,2,"White Tipped + Dark Denim","Simple, sharp, works anywhere."],
+[12,4,3,"Cream LS + Dark Denim","Cream, dark denim and Chelsea boots: smart-casual at its best."],
+[4,4,0,"Bordeaux + Dark Denim","Bordeaux and indigo is a rich, classic combo; Samba keeps it easy."],
+[14,5,2,"Green Stripe + Light Denim","Bright, fresh daytime look; stripe pops on light wash."],
+[8,4,2,"White Tee + Dark Denim","The timeless basic: crisp white, dark jeans, white sneakers."],
+[9,5,2,"Black Tee + Light Denim","Black on light wash is high-contrast and effortlessly cool."]]]];
+const OWN=new Set(["White Tipped Textured Polo","Green Stripe Knit Polo","Cream XFJ","Navy 166","Pine Green 132","Bordeaux Red","Dark Green LS Polo","White/Light Blue Stripe LS Polo","Cream LS Polo","Chocolate","Anthracite Gray","Beige Marl Jogger","Black","Onitsuka White/Navy","AF1 White","Black Chelsea","Zara Black Sneaker"]);
+const VC={Best:["#EAF3DE","#27500A"],Good:["#E6F1FB","#0C447C"],OK:["#FAEEDA","#633806"],Avoid:["#FCEBEB","#791F1F"]};
+let s={p:12,t:0,h:3};
+function sh(c){const d=parseInt(c.slice(1),16);return "#"+[(d>>16)&255,(d>>8)&255,d&255].map(x=>Math.round(x*0.72).toString(16).padStart(2,"0")).join("")}
+function set(id,f,st){const e=document.getElementById(id);if(f)e.setAttribute("fill",f);e.setAttribute("stroke",st)}
+function vis(ids,on){ids.forEach(i=>document.getElementById(i).style.display=on?"block":"none")}
+function draw(){
+const p=P[s.p][1],ty=P[s.p][2],t=T[s.t][1],h=S[s.h],jeans=s.t>=4;
+["polo","ls","collar","plk"].forEach(i=>set(i,p,sh(p)));["cuffL","cuffR","neck","lcL","lcR"].forEach(i=>set(i,null,sh(p)));["b1","b2"].forEach(i=>set(i,sh(p),sh(p)));const X=P[s.p];if(X[3]){const st=X[3]=="stp"?"#7F95AE":"#5E7F55";["ls","polo","plk"].forEach(i=>set(i,"url(#"+X[3]+")",st))}if(X[4])set("collar",X[4],"#9A6F3A"==X[5]?"#8A6A35":"#B8B6AF");if(X[6])set("plk",X[6],"#B8B6AF");if(X[5])["cuffL","cuffR","lcL","lcR"].forEach(i=>set(i,null,X[5]));if(X[5]&&X[4]==X[1])set("collar",X[4],X[5]);
+const coll=ty=="polo"||ty=="lpolo",lng=ty=="ls"||ty=="lpolo";vis(["polo"],!lng);vis(["ls","lcL","lcR"],lng);vis(["collar","plk","b1","b2"],coll);vis(["cuffL","cuffR"],ty=="polo");vis(["neck"],!coll);
+set("tr",t,sh(t));set("wb",t,sh(t));set("crease",null,sh(t));
+document.getElementById("draw").setAttribute("stroke",s.t==2?"#8A7E70":"none");
+vis(["wb"],s.t==2||jeans);vis(["crease"],!jeans);vis(["jst","loops"],jeans);
+document.getElementById("loops").setAttribute("stroke",sh(t));
+["uL","uR"].forEach(i=>set(i,h[1],"#9A978F"));["sL","sR"].forEach(i=>set(i,h[2],"#9A978F"));["aL","aR"].forEach(i=>set(i,null,h[3]));
+const pn=P[s.p][0],hn=h[0];let a=ST[hn][s.t];if(hn.startsWith("Onitsuka")&&pn.startsWith("Navy")&&!jeans)a+=0.5;const sc=Math.max(1,Math.min(5,B[pn][s.t]+a));document.getElementById("sc").textContent=sc.toFixed(1);
+const v=sc>=4.5?"Best":sc>=3.5?"Good":sc>=2.5?"OK":"Avoid";const vd=document.getElementById("vd");vd.textContent=v;vd.style.background=VC[v][0];vd.style.color=VC[v][1];
+let o=OC[s.t];if((ty=="ls"||ty=="ss")&&s.t<2)o=ty=="ls"?"Casual dinner / relaxed office":"Casual only · tee too relaxed for this trouser";
+document.getElementById("oc").textContent=o+(pn.startsWith("Bordeaux")?" · new buy":"")+(hn=="Black Chelsea"&&s.t==2?" · boots with jogger don't work":"")+(pn.startsWith("Navy")&&s.t==4?" · low contrast, navy on dark denim":"");
+document.getElementById("desc").textContent=pn+" + "+T[s.t][0]+" + "+hn;let w="";BEST.forEach(g=>g[1].forEach(k=>{if(k[0]==s.p&&k[1]==s.t&&k[2]==s.h)w="★ "+k[3]+" — "+k[4]}));document.getElementById("why").textContent=w;
+build()}
+function chip(c,l,on,fn,col){const b=document.createElement("button");b.className="ch"+(on?" on":"");b.innerHTML='<span class="sw" style="background:'+col+'"></span>'+l;b.onclick=fn;c.appendChild(b)}
+function build(){
+const r=["rp","rlp","rl","rss","rt","rj","rs","rk"].map(i=>document.getElementById(i));r.forEach(x=>x.innerHTML="");
+const row={polo:r[0],lpolo:r[1],ls:r[2],ss:r[3]};r.splice(1,1);
+P.forEach((x,i)=>chip(row[x[2]],x[0].replace(/ \w*\d\w*$/,"").replace(/ (LS )?(Tee|Polo)$/,""),i==s.p,()=>{s.p=i;draw()},x[3]=="stp"?"repeating-linear-gradient(180deg,#9DBCDD 0 4px,#F6F5F1 4px 8px)":x[3]=="stp2"?"repeating-linear-gradient(180deg,#4E8A4F 0 3px,#EFE8CF 3px 6px)":x[1]));
+T.forEach((x,i)=>chip(i>=4?r[4]:r[3],x[0].replace(/ Jeans$/,""),i==s.t,()=>{s.t=i;draw()},x[1]));
+S.forEach((x,i)=>chip(r[5],x[0],i==s.h,()=>{s.h=i;draw()},x[1]));
+TOP.forEach((k,i)=>{const b=document.createElement("button");b.className="pk"+(k[0]==s.p&&k[1]==s.t&&k[2]==s.h?" on":"");b.textContent="#"+(i+1);b.title=P[k[0]][0]+" + "+T[k[1]][0]+" + "+S[k[2]][0];b.onclick=()=>{s={p:k[0],t:k[1],h:k[2]};draw()};r[6].appendChild(b)});
+const rb=document.getElementById("rb");rb.innerHTML="";BEST.forEach(g=>{let n=0;const d=document.createElement("div");d.className="bg";const h=document.createElement("span");h.className="gl";h.textContent=g[0];d.appendChild(h);g[1].forEach(k=>{n++;const b=document.createElement("button");const on=k[0]==s.p&&k[1]==s.t&&k[2]==s.h,ow=[P[k[0]][0],T[k[1]][0],S[k[2]][0]].every(x=>OWN.has(x));b.className="pk"+(on?" on":"")+(ow?"":" buy");b.textContent="★"+n;b.title=k[3]+": "+P[k[0]][0]+" + "+T[k[1]][0]+" + "+S[k[2]][0];b.onclick=()=>{s={p:k[0],t:k[1],h:k[2]};draw()};d.appendChild(b)});rb.appendChild(d)})}
+draw();
+</script></body></html>
